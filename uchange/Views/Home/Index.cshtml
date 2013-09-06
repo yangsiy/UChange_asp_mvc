@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>@ViewBag.Message</h2>
+@if (Request.IsAuthenticated)
+{
+    <h3>Welcome, @ViewBag.first_name @ViewBag.last_name</h3>
+    <p>Item owned now: <a href="/item/detail/@ViewBag.item_now_id">@ViewBag.item_now_name</a></p>
+}
+else
+{
+    @Html.ActionLink("Join Today!","Register","Account")
+}

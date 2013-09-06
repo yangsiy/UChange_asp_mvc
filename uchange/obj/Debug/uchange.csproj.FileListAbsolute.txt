@@ -1,0 +1,42 @@
+c:\Users\yangsiyu\Documents\Visual Studio 2012\Projects\uchange\uchange\bin\uchange.dll
+c:\Users\yangsiyu\Documents\Visual Studio 2012\Projects\uchange\uchange\bin\uchange.pdb
+c:\Users\yangsiyu\Documents\Visual Studio 2012\Projects\uchange\uchange\bin\EntityFramework.dll
+c:\Users\yangsiyu\Documents\Visual Studio 2012\Projects\uchange\uchange\bin\Microsoft.Web.Infrastructure.dll
+c:\Users\yangsiyu\Documents\Visual Studio 2012\Projects\uchange\uchange\bin\System.Web.Helpers.dll
+c:\Users\yangsiyu\Documents\Visual Studio 2012\Projects\uchange\uchange\bin\System.Web.Mvc.dll
+c:\Users\yangsiyu\Documents\Visual Studio 2012\Projects\uchange\uchange\bin\System.Web.Providers.dll
+c:\Users\yangsiyu\Documents\Visual Studio 2012\Projects\uchange\uchange\bin\System.Web.Razor.dll
+c:\Users\yangsiyu\Documents\Visual Studio 2012\Projects\uchange\uchange\bin\System.Web.WebPages.Deployment.dll
+c:\Users\yangsiyu\Documents\Visual Studio 2012\Projects\uchange\uchange\bin\System.Web.WebPages.dll
+c:\Users\yangsiyu\Documents\Visual Studio 2012\Projects\uchange\uchange\bin\System.Web.WebPages.Razor.dll
+c:\Users\yangsiyu\Documents\Visual Studio 2012\Projects\uchange\uchange\bin\EntityFramework.xml
+c:\Users\yangsiyu\Documents\Visual Studio 2012\Projects\uchange\uchange\bin\System.Web.Helpers.xml
+c:\Users\yangsiyu\Documents\Visual Studio 2012\Projects\uchange\uchange\bin\System.Web.Mvc.xml
+c:\Users\yangsiyu\Documents\Visual Studio 2012\Projects\uchange\uchange\bin\System.Web.Razor.xml
+c:\Users\yangsiyu\Documents\Visual Studio 2012\Projects\uchange\uchange\bin\System.Web.WebPages.xml
+c:\Users\yangsiyu\Documents\Visual Studio 2012\Projects\uchange\uchange\bin\System.Web.WebPages.Deployment.xml
+c:\Users\yangsiyu\Documents\Visual Studio 2012\Projects\uchange\uchange\bin\System.Web.WebPages.Razor.xml
+c:\Users\yangsiyu\Documents\Visual Studio 2012\Projects\uchange\uchange\obj\Debug\uchange.csprojResolveAssemblyReference.cache
+c:\Users\yangsiyu\Documents\Visual Studio 2012\Projects\uchange\uchange\obj\Debug\uchange.dll
+c:\Users\yangsiyu\Documents\Visual Studio 2012\Projects\uchange\uchange\obj\Debug\uchange.pdb
+C:\Users\yangsiyu\Documents\GitHub\UChange_asp_mvc\uchange\bin\uchange.dll
+C:\Users\yangsiyu\Documents\GitHub\UChange_asp_mvc\uchange\bin\uchange.pdb
+C:\Users\yangsiyu\Documents\GitHub\UChange_asp_mvc\uchange\bin\EntityFramework.dll
+C:\Users\yangsiyu\Documents\GitHub\UChange_asp_mvc\uchange\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\yangsiyu\Documents\GitHub\UChange_asp_mvc\uchange\bin\System.Web.Helpers.dll
+C:\Users\yangsiyu\Documents\GitHub\UChange_asp_mvc\uchange\bin\System.Web.Mvc.dll
+C:\Users\yangsiyu\Documents\GitHub\UChange_asp_mvc\uchange\bin\System.Web.Providers.dll
+C:\Users\yangsiyu\Documents\GitHub\UChange_asp_mvc\uchange\bin\System.Web.Razor.dll
+C:\Users\yangsiyu\Documents\GitHub\UChange_asp_mvc\uchange\bin\System.Web.WebPages.Deployment.dll
+C:\Users\yangsiyu\Documents\GitHub\UChange_asp_mvc\uchange\bin\System.Web.WebPages.dll
+C:\Users\yangsiyu\Documents\GitHub\UChange_asp_mvc\uchange\bin\System.Web.WebPages.Razor.dll
+C:\Users\yangsiyu\Documents\GitHub\UChange_asp_mvc\uchange\bin\EntityFramework.xml
+C:\Users\yangsiyu\Documents\GitHub\UChange_asp_mvc\uchange\bin\System.Web.Helpers.xml
+C:\Users\yangsiyu\Documents\GitHub\UChange_asp_mvc\uchange\bin\System.Web.Mvc.xml
+C:\Users\yangsiyu\Documents\GitHub\UChange_asp_mvc\uchange\bin\System.Web.Razor.xml
+C:\Users\yangsiyu\Documents\GitHub\UChange_asp_mvc\uchange\bin\System.Web.WebPages.xml
+C:\Users\yangsiyu\Documents\GitHub\UChange_asp_mvc\uchange\bin\System.Web.WebPages.Deployment.xml
+C:\Users\yangsiyu\Documents\GitHub\UChange_asp_mvc\uchange\bin\System.Web.WebPages.Razor.xml
+C:\Users\yangsiyu\Documents\GitHub\UChange_asp_mvc\uchange\obj\Debug\uchange.csprojResolveAssemblyReference.cache
+C:\Users\yangsiyu\Documents\GitHub\UChange_asp_mvc\uchange\obj\Debug\uchange.dll
+C:\Users\yangsiyu\Documents\GitHub\UChange_asp_mvc\uchange\obj\Debug\uchange.pdb

@@ -1,0 +1,14 @@
+﻿@model IEnumerable<uchange.Models.ItemDB>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Items</h2>
+@foreach (var item in Model)
+{
+    if (item.id != @ViewBag.item_now)
+    {
+        <p>@Html.ActionLink(item.name, "Detail", new { id = item.id })</p>
+    }
+}

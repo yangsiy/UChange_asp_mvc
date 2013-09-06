@@ -1,0 +1,26 @@
+﻿@model uchange.Models.ItemDB
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<p>(Item Detial)</p>
+<h2>@Model.name</h2>
+<p>@Model.description</p>
+
+@if (ViewBag.flag == 1)
+{
+    <p>This is your own item!</p>
+}
+
+@if (ViewBag.flag == 2)
+{
+    <p>The owner of this item has sent request to you. You can get it by a click.</p>
+    <a href="/requests/accept/@Model.id">Accept</a>
+}
+
+@if (ViewBag.flag == 0)
+{
+    <p>Do you want it? Send request now.</p>
+    <a href="/requests/send/@Model.id">Send Request</a>
+}

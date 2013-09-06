@@ -1,0 +1,11 @@
+﻿@model List<uchange.Models.ItemDB>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Requests</h2>
+@foreach (var each in Model)
+{
+    <p><a href="/item/detail/@each.id">@each.name</a></p>
+}
