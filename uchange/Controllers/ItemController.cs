@@ -41,6 +41,14 @@ namespace uchange.Controllers
                     }
                 }
             }
+            foreach (var r in request.Requests.ToList())
+            {
+                if (r.from == stu.student_id && r.to == id)
+                {
+                    ViewBag.flag = 3;
+                    break;
+                }
+            }
             return View(it);
         }
 

@@ -18,6 +18,11 @@
     <a href="/requests/accept/@Model.id">Accept</a>
 }
 
+@if (ViewBag.flag == 3)
+{
+    <p>You've sent request.</p>
+}
+
 @if (ViewBag.flag == 0)
 {
     <p>Do you want it? Send request now.</p>
