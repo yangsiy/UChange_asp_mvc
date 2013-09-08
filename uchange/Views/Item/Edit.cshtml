@@ -1,0 +1,13 @@
+﻿@model uchange.Models.ItemDB
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit Item</h2>
+@using (Html.BeginForm())
+{
+    <p>Name: <input type="text" value="@Model.name" name="name" /></p>
+    <P>Description: <textarea name="description">@Model.description</textarea></P>
+    <input type="submit" value="submit" />
+}

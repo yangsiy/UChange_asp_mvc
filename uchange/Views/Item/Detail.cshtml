@@ -4,9 +4,8 @@
     ViewBag.Title = "Index";
 }
 
-<p>(Item Detial)</p>
 <h2>@Model.name</h2>
-<p>@Model.description</p>
+<p>@Html.Raw(@Model.description.Replace("\r\n","<br />"))</p>
 
 @if (ViewBag.flag == 1)
 {

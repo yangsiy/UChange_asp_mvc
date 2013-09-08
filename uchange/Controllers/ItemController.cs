@@ -44,5 +44,20 @@ namespace uchange.Controllers
             return View(it);
         }
 
+        public ActionResult Edit(int id)
+        {
+            ItemDB it = item.Items.Find(id);
+            return View(it);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(int id, string name, string description)
+        {
+            ItemDB it = item.Items.Find(id);
+            it.name = name;
+            it.description = description;
+            item.SaveChanges();
+            return RedirectToAction("Detail", new { id = id });
+        }
     }
 }
