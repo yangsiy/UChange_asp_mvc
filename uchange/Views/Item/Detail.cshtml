@@ -7,6 +7,8 @@
 <h2>@Model.name</h2>
 <p>@Html.Raw(@Model.description.Replace("\r\n","<br />"))</p>
 
+<p>Owner: <a href="/person/detail/@ViewBag.owner">@ViewBag.owner_name</a></p>
+
 @if (ViewBag.flag == 1)
 {
     <p>This is your own item!</p>

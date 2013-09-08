@@ -23,6 +23,16 @@ namespace uchange.Controllers
         {
             ItemDB it = item.Items.Find(id);
             PersonDB stu=person.Persons.Find(User.Identity.Name);
+            foreach (var p in person.Persons.ToList())
+            {
+                if (p.item_now == id)
+                {
+                    ViewBag.owner = p.student_id;
+                    ViewBag.owner_name = p.first_name + " " + p.last_name;
+                    break;
+                }
+            }
+
             ViewBag.flag = 0;
             if (it.id == stu.item_now)
                 ViewBag.flag = 1;

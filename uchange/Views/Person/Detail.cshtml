@@ -4,7 +4,7 @@
     ViewBag.Title = "Detail";
 }
 
-<p>(Person Detail)</p>
 <h2>@ViewBag.first_name @ViewBag.last_name</h2>
+<p>Student ID: @ViewBag.student_id</p>
 <p>Email: @ViewBag.email</p>
 <p>Item Owned: <a href="/item/detail/@Model.id">@Model.name</a></p>

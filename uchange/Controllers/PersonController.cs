@@ -22,6 +22,7 @@ namespace uchange.Controllers
             PersonDB stu = person.Persons.Find(id);
             ViewBag.first_name = stu.first_name;
             ViewBag.last_name = stu.last_name;
+            ViewBag.student_id = stu.student_id;
             ViewBag.email = stu.email;
             ItemDB it = item.Items.Find(stu.item_now);
             return View(it);
