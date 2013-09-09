@@ -11,6 +11,7 @@ namespace uchange.Controllers
     {
         ItemDBContext item = new ItemDBContext();
         PersonDBContext person = new PersonDBContext();
+        DealDBContext deal = new DealDBContext();
 
         public ActionResult Index()
         {
@@ -28,5 +29,20 @@ namespace uchange.Controllers
             return View(it);
         }
 
+        public ActionResult History(string id)
+        {
+            List<DealDB> tmp = new List<DealDB>();
+            foreach (var d in deal.Deals.OrderBy(c => c.deal_time).ToList())
+            {
+                if (d.to == id)
+                {
+                    tmp.Add(d);
+                }
+            }
+            PersonDB stu = person.Persons.Find(id);
+            ViewBag.first_name = stu.first_name;
+            ViewBag.last_name = stu.last_name;
+            return View(tmp);
+        }
     }
 }

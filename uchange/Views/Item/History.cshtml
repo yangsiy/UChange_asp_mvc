@@ -1,0 +1,19 @@
+﻿@model List<uchange.Models.DealDB>
+
+@{
+    ViewBag.Title = "History";
+    uchange.Models.PersonDBContext person = new uchange.Models.PersonDBContext();
+    bool flag = false;
+}
+
+<h2>Change History of @ViewBag.item_name</h2>
+@foreach (var d in Model)
+{
+    if (!flag)
+    {
+        <h3>@person.Persons.Find(d.from).first_name @person.Persons.Find(d.from).last_name</h3>
+        flag=true;
+    }
+    <p>--> @d.deal_time</p>
+    <h3>@person.Persons.Find(d.to).first_name @person.Persons.Find(d.to).last_name</h3>
+}

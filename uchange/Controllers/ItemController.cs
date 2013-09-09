@@ -12,6 +12,7 @@ namespace uchange.Controllers
         ItemDBContext item = new ItemDBContext();
         PersonDBContext person = new PersonDBContext();
         RequestDBContext request = new RequestDBContext();
+        DealDBContext deal = new DealDBContext();
 
         public ActionResult Index()
         {
@@ -76,6 +77,18 @@ namespace uchange.Controllers
             it.description = description;
             item.SaveChanges();
             return RedirectToAction("Detail", new { id = id });
+        }
+
+        public ActionResult History(int id)
+        {
+            List<DealDB> tmp = new List<DealDB>();
+            foreach (var d in deal.Deals.OrderBy(c => c.deal_time).ToList())
+            {
+                if (d.item == id)
+                    tmp.Add(d);
+            }
+            ViewBag.item_name = item.Items.Find(id).name;
+            return View(tmp);
         }
     }
 }
