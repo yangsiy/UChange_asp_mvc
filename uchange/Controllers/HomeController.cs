@@ -47,5 +47,29 @@ namespace uchange.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public ActionResult Result()
+        {
+            PersonDB stu = person.Persons.Find(User.Identity.Name);
+            ViewBag.give = item.Items.Find(stu.item_original).name;
+            ViewBag.get = item.Items.Find(stu.item_now).name;
+            foreach (var p in person.Persons.ToList())
+            {
+                if (p.item_now == stu.item_original)
+                {
+                    ViewBag.giveto = p.student_id;
+                    break;
+                }
+            }
+            foreach (var p in person.Persons.ToList())
+            {
+                if (p.item_original == stu.item_now)
+                {
+                    ViewBag.getfrom = p.student_id;
+                    break;
+                }
+            }
+            return View();
+        }
     }
 }

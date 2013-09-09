@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Result";
+    uchange.Models.PersonDBContext person = new uchange.Models.PersonDBContext();
+    uchange.Models.PersonDB giveto, getfrom;
+    giveto = person.Persons.Find(ViewBag.giveto);
+    getfrom = person.Persons.Find(ViewBag.getfrom);
+}
+
+<h2>Change Result</h2>
+<p>You should give @ViewBag.give to <a href="/person/detail/@giveto.student_id">@giveto.first_name @giveto.last_name</a></p>
+<p>and You will get @ViewBag.get from <a href="/person/detail/@getfrom.student_id">@getfrom.first_name @getfrom.last_name</a></p>

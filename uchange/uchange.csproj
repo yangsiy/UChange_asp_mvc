@@ -212,6 +212,7 @@
     <Content Include="Views\Item\Edit.cshtml" />
     <Content Include="Views\Item\History.cshtml" />
     <Content Include="Views\Person\History.cshtml" />
+    <Content Include="Views\Home\Result.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
