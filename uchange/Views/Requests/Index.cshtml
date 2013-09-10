@@ -5,7 +5,9 @@
 }
 
 <h2>Requests</h2>
+<ul>
 @foreach (var each in Model)
 {
-    <p><a href="/item/detail/@each.id">@each.name</a></p>
+    <li><a href="/item/detail/@each.id">@each.name</a></li>
 }
+</ul>

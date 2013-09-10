@@ -5,10 +5,12 @@
 }
 
 <h2>Items</h2>
+<ul>
 @foreach (var item in Model)
 {
     if (item.id != @ViewBag.item_now)
     {
-        <p>@Html.ActionLink(item.name, "Detail", new { id = item.id })</p>
+        <li>@Html.ActionLink(item.name, "Detail", new { id = item.id })</li>
     }
 }
+</ul>
