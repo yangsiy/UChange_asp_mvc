@@ -1,11 +1,28 @@
 ﻿@{
     ViewBag.Title = "Result";
+    Layout = "~/Views/Shared/_Layout.cshtml";
     uchange.Models.PersonDBContext person = new uchange.Models.PersonDBContext();
     uchange.Models.PersonDB giveto, getfrom;
     giveto = person.Persons.Find(ViewBag.giveto);
     getfrom = person.Persons.Find(ViewBag.getfrom);
 }
 
-<h2>Change Result</h2>
-<p>You should give @ViewBag.give to <a href="/person/detail/@giveto.student_id">@giveto.first_name @giveto.last_name</a></p>
-<p>and You will get @ViewBag.get from <a href="/person/detail/@getfrom.student_id">@getfrom.first_name @getfrom.last_name</a></p>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <h1>Change Result</h1>
+        <br />
+        <p />
+        @if (@ViewBag.flag==0)
+        {
+            <h4>No Exchange Needed.</h4>
+        }
+        else
+        {
+        <p>You should give <font size=5>@ViewBag.give</font> to <a
+            href="/person/detail/@giveto.student_id"><font size=5>@giveto.first_name @giveto.last_name</font></a></p>
+        <br />
+        <br />
+        <p>You will get <font size=5>@ViewBag.get</font> from <a href="/person/detail/@getfrom.student_id"><font size=5>@getfrom.first_name @getfrom.last_name</font></a></p>
+        }
+    </div>
+</div>

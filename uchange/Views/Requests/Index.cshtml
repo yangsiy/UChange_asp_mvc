@@ -2,10 +2,18 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Requests</h2>
-@foreach (var each in Model)
-{
-    <p><a href="/item/detail/@each.id">@each.name</a></p>
-}
+<div class="container-fluid">
+    <div class="row-fluid">
+        <h1>Requests</h1>
+        <p />
+        <ul class="nav nav-tabs nav-stacked">
+            @foreach (var each in Model)
+            {
+                <li><a href="/item/detail/@each.id">@each.name</a></li>
+            }
+        </ul>
+    </div>
+</div>

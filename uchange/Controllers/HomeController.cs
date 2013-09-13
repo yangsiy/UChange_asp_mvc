@@ -11,17 +11,45 @@ namespace uchange.Controllers
     {
         ItemDBContext item = new ItemDBContext();
         PersonDBContext person = new PersonDBContext();
+        RequestDBContext request = new RequestDBContext();
         public ActionResult Index()
         {
-            if (Request.IsAuthenticated)
+            if (!Request.IsAuthenticated)
+            {
+                return RedirectToAction("LogOn", "Account");
+            }
+            else
             {
                 string id = User.Identity.Name;
                 PersonDB stu = person.Persons.Find(id);
+                ViewBag.student_id = stu.student_id;
                 ViewBag.first_name = stu.first_name;
                 ViewBag.last_name = stu.last_name;
+
                 ItemDB it = item.Items.Find(stu.item_now);
                 ViewBag.item_now_name = it.name;
                 ViewBag.item_now_id = it.id;
+
+                it = item.Items.Find(stu.item_original);
+                ViewBag.item_original_name = it.name;
+                ViewBag.item_original_id = it.id;
+
+                int tmp = 0;
+                foreach (var r in request.Requests.ToList())
+                {
+                    if (r.to == stu.item_now)
+                        tmp++;
+                }
+                ViewBag.request_count = tmp;
+
+                if (stu.item_now == stu.item_original)
+                {
+                    ViewBag.edit_flag = 1;
+                }
+                else
+                {
+                    ViewBag.edit_flag = 0;
+                }
             }
             return View();
         }
@@ -69,6 +97,16 @@ namespace uchange.Controllers
                     break;
                 }
             }
+
+            if (stu.item_now == stu.item_original)
+            {
+                ViewBag.flag = 0;
+            }
+            else
+            {
+                ViewBag.flag = 1;
+            }
+
             return View();
         }
     }

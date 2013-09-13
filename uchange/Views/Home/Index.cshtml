@@ -1,14 +1,45 @@
 ﻿@{
     ViewBag.Title = "Home Page";
+    ViewBag.dynamic = 1;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@ViewBag.Message</h2>
-@if (Request.IsAuthenticated)
-{
-    <h3>Welcome, @ViewBag.first_name @ViewBag.last_name</h3>
-    <p>Item owned now: <a href="/item/detail/@ViewBag.item_now_id">@ViewBag.item_now_name</a></p>
-}
-else
-{
-    @Html.ActionLink("Join Today!","Register","Account")
-}
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="col-md-8">
+            <h1>Welcome, @ViewBag.first_name @ViewBag.last_name</h1>
+            @if (ViewBag.request_count>0)
+            {
+            <a href="/requests/index"><h3>
+                <font color=red font-weight=bold>You have
+                    @ViewBag.request_count requests now!</font></h3></a>
+            }
+            else
+            {
+                <p>No request at the moment.</p>
+            }
+            <h4>Item Owned Now: <a href="/item/detail/@ViewBag.item_now_id">@ViewBag.item_now_name</a></h4>
+            <br />
+            @if (ViewBag.item_original_id != ViewBag.item_now_id)
+            {
+                <p>From <font size=5>@ViewBag.item_original_name</font> to <font size=5>@ViewBag.item_now_name</font></p>
+            }
+            else
+            {
+                <p>Find something to <font size=5>change now!</font></p>
+            }
+        </div>
+
+        <div class="col-md-4" style="background-color:#FFF6EC">
+            <ul class="nav nav-tabs nav-stacked">
+                @if (ViewBag.edit_flag == 1)
+                {
+                <li><a href="/item/edit/@ViewBag.item_now_id">Edit My Item</a></li>
+                }
+                <li><a href="/item/index">Find Goods</a></li>
+                <li><a href="/requests/index">Request</a></li>
+                <li><a href="/person/history/@ViewBag.student_id">My Exchange History</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

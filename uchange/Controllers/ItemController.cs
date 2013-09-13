@@ -34,6 +34,14 @@ namespace uchange.Controllers
                 }
             }
 
+            int count = 0;
+            foreach (var r in request.Requests.ToList())
+            {
+                if (r.to == id)
+                    count++;
+            }
+            ViewBag.request_count = count;
+
             ViewBag.flag = 0;
             if (it.id == stu.item_now)
                 ViewBag.flag = 1;
@@ -87,6 +95,7 @@ namespace uchange.Controllers
                 if (d.item == id)
                     tmp.Add(d);
             }
+            ViewBag.item_id = item.Items.Find(id).id;
             ViewBag.item_name = item.Items.Find(id).name;
             return View(tmp);
         }

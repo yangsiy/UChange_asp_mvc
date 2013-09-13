@@ -2,12 +2,31 @@
 
 @{
     ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Edit Item</h2>
-@using (Html.BeginForm())
-{
-    <p>Name: <input type="text" value="@Model.name" name="name" /></p>
-    <P>Description: <textarea name="description">@Model.description</textarea></P>
-    <input type="submit" value="submit" />
-}
+<div class="container-fluid">
+    <div class="row-fluid">
+        <h1>Edit Item</h1>
+        <br />
+        <p />
+        <div class="col-md-12">
+            @using (Html.BeginForm())
+            {
+                <div class="col-md-2" align="right">
+                    <p><strong>name:</strong></p>
+                    <p><strong>description:</strong></p>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" name="name" value="@Model.name" />
+                    <textarea class="form-control" rows="20" cols="20" name="description" style="width:100%">@Model.description</textarea>
+                </div>
+                <div class="col-md-12" align="center">
+                    <br/>
+                    <button type="submit" class="btn submit btn-primary">Submit</button>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>

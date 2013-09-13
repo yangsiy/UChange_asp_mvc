@@ -40,6 +40,7 @@ namespace uchange.Controllers
                 }
             }
             PersonDB stu = person.Persons.Find(id);
+            ViewBag.student_id = stu.student_id;
             ViewBag.first_name = stu.first_name;
             ViewBag.last_name = stu.last_name;
             return View(tmp);

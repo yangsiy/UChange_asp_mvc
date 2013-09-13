@@ -2,13 +2,21 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Items</h2>
-@foreach (var item in Model)
-{
-    if (item.id != @ViewBag.item_now)
-    {
-        <p>@Html.ActionLink(item.name, "Detail", new { id = item.id })</p>
-    }
-}
+<div class="container-fluid">
+    <div class="row-fluid">
+        <h1>Items</h1>
+        <p />
+        <ul class="nav nav-tabs nav-stacked">
+            @foreach (var item in Model)
+            {
+                if (item.id!=@ViewBag.item_now)
+                {
+                    <li><a href="/item/detail/@item.id">@item.name</a></li>
+                }
+            }
+        </ul>
+    </div>
+</div>

@@ -2,10 +2,18 @@
 
 @{
     ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@ViewBag.first_name @ViewBag.last_name</h2>
-<p>Student ID: @ViewBag.student_id</p>
-<p>Email: @ViewBag.email</p>
-<p>Item Owned: <a href="/item/detail/@Model.id">@Model.name</a></p>
-<a href="/person/history/@ViewBag.student_id">Change History</a>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <h1>@ViewBag.first_name @ViewBag.last_name</h1>
+        <p />
+        <h4>Item Owned: <a href="/item/detail/@Model.id">@Model.name</a></h4>
+        <h4>Student ID: @ViewBag.student_id</h4>
+        <h4>Email: @ViewBag.email</h4>
+
+        <p />
+        <li><h4><a href="/person/history/@ViewBag.student_id">Change History</a></h4></li>
+    </div>
+</div>

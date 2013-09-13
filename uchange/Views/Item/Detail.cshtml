@@ -2,33 +2,49 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@Model.name</h2>
-<p>@Html.Raw(@Model.description.Replace("\r\n","<br />"))</p>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="col-md-8">
+            <h1>@Model.name</h1>
+            <p />
+            <div class="col-md-11">
+                <p>@Html.Raw(@Model.description.Replace("\r\n","<br />"))</p>
+                <hr/>
+                <h4>Owner: <a href="/person/detail/@ViewBag.owner">@ViewBag.owner_name</a></h4>
+                <h4>Number of Request: @ViewBag.request_count</h4>
+            </div>
+        </div>
 
-<p>Owner: <a href="/person/detail/@ViewBag.owner">@ViewBag.owner_name</a></p>
+        <div class="col-md-4" style="background-color:#FFF6EC">
+            <ul class="nav nav-tabs nav-stacked">
+                @if (ViewBag.flag == 1)
+                {
+                    <li>This is your own item!</li>
+                }
 
-@if (ViewBag.flag == 1)
-{
-    <p>This is your own item!</p>
-}
+                @if (ViewBag.flag == 2)
+                {
+                    <li>The owner of this item has sent request to you. You can get it by a click.</li>
+                    <a href="/requests/accept/@Model.id" style="font-weight:bold;color:#F00">Accept</a>
+                }
 
-@if (ViewBag.flag == 2)
-{
-    <p>The owner of this item has sent request to you. You can get it by a click.</p>
-    <a href="/requests/accept/@Model.id">Accept</a>
-}
+                @if (ViewBag.flag == 3)
+                {
+                    <li>You've sent request.</li>
+                }
 
-@if (ViewBag.flag == 3)
-{
-    <p>You've sent request.</p>
-}
+                @if (ViewBag.flag == 0)
+                {
+                    <li>Do you want it? Send request now.</li>
+                    <a href="/requests/send/@Model.id">Send Request</a>
+                }
 
-@if (ViewBag.flag == 0)
-{
-    <p>Do you want it? Send request now.</p>
-    <a href="/requests/send/@Model.id">Send Request</a>
-}
+                <li><a href="/item/history/@Model.id">Change History</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
 
-<a href="/item/history/@Model.id">Change History</a>

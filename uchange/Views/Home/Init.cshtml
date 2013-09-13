@@ -1,12 +1,58 @@
-﻿@{
+﻿<!DOCTYPE html>
+@{
     ViewBag.Title = "About Us";
 }
 
-<h2>Init Item</h2>
-@using (Html.BeginForm())
-{
-    <p>Item Name: <input type="text" name="item_name" /></p>
-    <p>Item Description:</p>
-    <textarea name="item_description"></textarea>
-    <input type="submit" value="submit" />
-}
+<html>
+<head>
+    <title>UChange</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        body {
+            background-color: #F2F5FF;
+        }
+
+        .field {
+            background-color: #FCFCFA;
+            margin: 20px;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            border-radius: 20px;
+            -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            -moz-box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        }
+
+        div {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<div class="container" align="center">
+    <div class="row-fluid" style="margin-top: 40px">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 field">
+            <h2><img src="@Url.Content("~/Content/images/logo-small.png")" style="margin-right: 40px">Add Item</h2>
+            <br/>
+            @using (Html.BeginForm())
+            {
+                <div class="col-md-3" align="right" style="line-height: 180%">
+                    <p><strong>Item Name:</strong></p>
+                    <p><strong>Item Description:</strong></p>
+                </div>
+                <div class="col-md-7" align="left">
+                    <input type="text" name="name" />
+                    <textarea rows="20" cols="20" name="description" style="width:100%"></textarea>
+                </div>
+                <div class="col-md-12">
+                    <br />
+                    <button type="submit" class="btn submit btn-primary">Submit</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+</body>
+</html>

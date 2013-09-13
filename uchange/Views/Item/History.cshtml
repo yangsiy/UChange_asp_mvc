@@ -2,18 +2,23 @@
 
 @{
     ViewBag.Title = "History";
+    Layout = "~/Views/Shared/_Layout.cshtml";
     uchange.Models.PersonDBContext person = new uchange.Models.PersonDBContext();
     bool flag = false;
 }
 
-<h2>Change History of @ViewBag.item_name</h2>
-@foreach (var d in Model)
-{
-    if (!flag)
-    {
-        <h3>@person.Persons.Find(d.from).first_name @person.Persons.Find(d.from).last_name</h3>
-        flag=true;
-    }
-    <p>--> @d.deal_time</p>
-    <h3>@person.Persons.Find(d.to).first_name @person.Persons.Find(d.to).last_name</h3>
-}
+<div class="container-fluid">
+    <div class="row-fluid">
+        <h1>Change History of <a href="/item/detail/@ViewBag.item_id"><font color=#DB7E56>@ViewBag.item_name</font></a></h1>
+        @foreach (var d in Model)
+        {
+            if (!flag)
+            {
+                <h4>@person.Persons.Find(d.from).first_name @person.Persons.Find(d.from).last_name</h4>
+                flag=true;
+            }
+            <p><font size=3> --> @d.deal_time</font></p>
+            <h4>@person.Persons.Find(d.to).first_name @person.Persons.Find(d.to).last_name</h4>
+        }
+    </div>
+</div>
