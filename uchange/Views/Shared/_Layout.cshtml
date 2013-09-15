@@ -58,21 +58,18 @@
         <tbody>
         <tr>
             <td style="border-top-style:none">
-                <button class="btn btn-large" type="button">
+                <ul class="nav nav-tabs nav-justified">
+                <li>
                     <a href="/home/index"
                        style="text-decoration:none">Home</a>
-                </button>
+                </li>
                 @if (Request.IsAuthenticated)
                 {
-                <button class="btn btn-large" type="button">
-                    <a href="/item/index"
-                       style="text-decoration:none">Item</a>
-                </button>
-                <button class="btn btn-large" type="button">
-                    <a href="/requests/index"
-                       style="text-decoration:none">Request</a>
-                </button>
+                <li><a href="/item/index"style="text-decoration:none">Item</a></li>
+                <li><a href="/requests/index"style="text-decoration:none">Request</a></li>
+                <li><a href="/requests/my"style="text-decoration:none">My Request</a></li>
                 }
+                </ul>
             </td>
         </tr>
         <tr>

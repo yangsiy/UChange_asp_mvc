@@ -13,6 +13,7 @@ namespace uchange.Controllers
         PersonDBContext person = new PersonDBContext();
         RequestDBContext request = new RequestDBContext();
         DealDBContext deal = new DealDBContext();
+        CommentDBContext comment = new CommentDBContext();
 
         public ActionResult Index()
         {
@@ -98,6 +99,19 @@ namespace uchange.Controllers
             ViewBag.item_id = item.Items.Find(id).id;
             ViewBag.item_name = item.Items.Find(id).name;
             return View(tmp);
+        }
+
+        [HttpPost]
+        public ActionResult Comment(int id,string content)
+        {
+            CommentDB com = new CommentDB();
+            com.student_id = User.Identity.Name;
+            com.item_id = id;
+            com.content = content;
+            com.comment_time = DateTime.Now;
+            comment.Comments.Add(com);
+            comment.SaveChanges();
+            return Redirect("/item/detail/" + id);
         }
     }
 }

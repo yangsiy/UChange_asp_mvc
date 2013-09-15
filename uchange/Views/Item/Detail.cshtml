@@ -3,10 +3,14 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    uchange.Models.CommentDBContext comment = new uchange.Models.CommentDBContext();
+    uchange.Models.PersonDBContext person = new uchange.Models.PersonDBContext();
+    uchange.Models.PersonDB stu;
 }
 
 <div class="container-fluid">
     <div class="row-fluid">
+        <div class="row">
         <div class="col-md-8">
             <h1>@Model.name</h1>
             <p />
@@ -15,10 +19,37 @@
                 <hr/>
                 <h4>Owner: <a href="/person/detail/@ViewBag.owner">@ViewBag.owner_name</a></h4>
                 <h4>Number of Request: @ViewBag.request_count</h4>
+            <hr>
+            <h3>Comments</h3>
+            @foreach (var each in comment.Comments.ToList())
+            {
+                if (each.item_id==Model.id)
+                {
+                    stu = person.Persons.Find(each.student_id);
+                    <div class="well">
+                        <p>
+                            <small><a
+                                    href="/person/detail/@stu.student_id">@stu.first_name
+                                @stu.last_name</a>
+                                posted on @each.comment_time
+                            </small>
+                        </p>
+                        <p>@Html.Raw(each.content)</p>
+                    </div>
+                }
+            }
+            <form action="/item/comment/@Model.id" method="post" style="margin-right:16px;margin-left:16px">
+                <div class="row">
+                <p><textarea rows="7" cols="20" name="content" class="form-control" style="width:100%"></textarea></p>
+                </div>
+                <div class="row">
+                <button type="submit" class="btn submit btn-primary">Post Comment</button>
+                </div>
+            </form>
             </div>
         </div>
-
-        <div class="col-md-4" style="background-color:#FFF6EC">
+        <div class="col-md-4">
+        <div class="col-md-12" style="background-color:#FFF6EC;">
             <ul class="nav nav-tabs nav-stacked">
                 @if (ViewBag.flag == 1)
                 {
@@ -45,6 +76,9 @@
                 <li><a href="/item/history/@Model.id">Change History</a></li>
             </ul>
         </div>
+        </div>
+        </div>
+
     </div>
 </div>
 

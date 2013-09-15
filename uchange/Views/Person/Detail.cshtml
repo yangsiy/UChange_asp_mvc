@@ -7,15 +7,22 @@
 
 <div class="container-fluid">
     <div class="row-fluid">
-        <div class="col-md-12">
+        <div class="row">
+        <div class="col-md-8">
         <h1>@ViewBag.first_name @ViewBag.last_name</h1>
-        <p />
+        <br />
         <h4>Item Owned: <a href="/item/detail/@Model.id">@Model.name</a></h4>
         <h4>Student ID: @ViewBag.student_id</h4>
         <h4>Email: @ViewBag.email</h4>
+        </div>
 
-        <p />
-        <li><h4><a href="/person/history/@ViewBag.student_id">Change History</a></h4></li>
+        <div class="col-md-4">
+        <div class="col-md-12" style="background-color:#FFF6EC;">
+            <ul class="nav nav-tabs nav-stacked">
+                <li><a href="/person/history/@ViewBag.student_id">Change History</a></li>
+            </ul>
+        </div>
+        </div>
         </div>
     </div>
 </div>

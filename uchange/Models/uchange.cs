@@ -64,4 +64,19 @@ namespace uchange.Models
         public DbSet<DealDB> Deals { get; set; }
     }
 
+    public class CommentDB
+    {
+        [Key]
+        public int id { get; set; }
+        public string student_id { get; set; }
+        public int item_id { get; set; }
+        public string content { get; set; }
+        public DateTime comment_time { get; set; }
+    }
+
+    public class CommentDBContext : DbContext
+    {
+        public DbSet<CommentDB> Comments { get; set; }
+    }
+
 }
