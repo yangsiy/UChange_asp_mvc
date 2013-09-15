@@ -32,6 +32,21 @@ namespace uchange.Controllers
             return View(tmp);
         }
 
+        public ActionResult My()
+        {
+            List<ItemDB> tmp = new List<ItemDB>();
+            PersonDB stu = person.Persons.Find(User.Identity.Name);
+            foreach (var r in request.Requests.ToList())
+            {
+                if (r.from == stu.student_id)
+                {
+                    ItemDB i = item.Items.Find(r.to);
+                    tmp.Add(i);
+                }
+            }
+            return View(tmp);
+        }
+
         public ActionResult Send(int id)
         {
             RequestDB re = new RequestDB();
