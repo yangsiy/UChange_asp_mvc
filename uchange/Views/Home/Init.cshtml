@@ -31,22 +31,32 @@
 </head>
 <body>
 <div class="container" align="center">
-    <div class="row-fluid" style="margin-top: 40px">
+    <div class="row" style="margin-top: 40px">
         <div class="col-md-2"></div>
         <div class="col-md-8 field">
             <h2><img src="@Url.Content("~/Content/images/logo-small.png")" style="margin-right: 40px">Add Item</h2>
             <br/>
             @using (Html.BeginForm())
             {
-                <div class="col-md-3" align="right" style="line-height: 180%">
-                    <p><strong>Item Name:</strong></p>
-                    <p><strong>Item Description:</strong></p>
+                <div class="row">
+                    <div class="col-md-3" align="right">
+                        <p><strong>Item Name:</strong></p>
+                    </div>
+                    <div class="col-md-7" align="left">
+                        <input type="text" name="name" />
+                    </div>
                 </div>
-                <div class="col-md-7" align="left">
-                    <input type="text" name="name" />
-                    <textarea rows="20" cols="20" name="description" style="width:100%"></textarea>
+                <p />
+                <div class="row">
+                    <div class="col-md-3" align="right">
+                        <p><strong>Item Description:</strong></p>
+                    </div>
+                    <div class="col-md-7" align="left">
+                        <textarea rows="20" cols="20" name="description" style="width:100%"></textarea>
+                    </div>
                 </div>
-                <div class="col-md-12">
+                
+                <div class="row">
                     <br />
                     <button type="submit" class="btn submit btn-primary">Submit</button>
                 </div>
