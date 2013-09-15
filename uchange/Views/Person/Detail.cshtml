@@ -7,6 +7,7 @@
 
 <div class="container-fluid">
     <div class="row-fluid">
+        <div class="col-md-12">
         <h1>@ViewBag.first_name @ViewBag.last_name</h1>
         <p />
         <h4>Item Owned: <a href="/item/detail/@Model.id">@Model.name</a></h4>
@@ -15,5 +16,6 @@
 
         <p />
         <li><h4><a href="/person/history/@ViewBag.student_id">Change History</a></h4></li>
+        </div>
     </div>
 </div>
