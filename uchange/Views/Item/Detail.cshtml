@@ -34,7 +34,7 @@
                                 posted on @each.comment_time
                             </small>
                         </p>
-                        <p>@Html.Raw(each.content)</p>
+                        <p>@Html.Raw(each.content.Replace("\r\n","<br />"))</p>
                     </div>
                 }
             }
