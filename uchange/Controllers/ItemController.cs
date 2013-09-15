@@ -79,6 +79,7 @@ namespace uchange.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Edit(int id, string name, string description)
         {
             ItemDB it = item.Items.Find(id);

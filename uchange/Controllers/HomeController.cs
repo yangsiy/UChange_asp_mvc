@@ -60,6 +60,7 @@ namespace uchange.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Init(string item_name, string item_description)
         {
             ItemDB it = new ItemDB();
