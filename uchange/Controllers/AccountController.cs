@@ -26,13 +26,13 @@ namespace uchange.Controllers
         // POST: /Account/LogOn
 
         [HttpPost]
-        public ActionResult LogOn(LogOnModel model, string returnUrl)
+        public ActionResult LogOn(string username, string password, string returnUrl)
         {
             if (ModelState.IsValid)
             {
-                if (Membership.ValidateUser(model.UserName, model.Password))
+                if (Membership.ValidateUser(username, password))
                 {
-                    FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
+                    FormsAuthentication.SetAuthCookie(username,false);
                     if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")
                         && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
                     {
@@ -50,7 +50,7 @@ namespace uchange.Controllers
             }
 
             // If we got this far, something failed, redisplay form
-            return View(model);
+            return View();
         }
 
         //
@@ -75,22 +75,24 @@ namespace uchange.Controllers
         // POST: /Account/Register
 
         [HttpPost]
-        public ActionResult Register(RegisterModel model, string first_name, string last_name)
+        public ActionResult Register(string username, string first_name, string last_name, string email,string password, string confirmpassword)
         {
+            if (password != confirmpassword)
+                return View();
             if (ModelState.IsValid)
             {
                 // Attempt to register the user
                 MembershipCreateStatus createStatus;
-                Membership.CreateUser(model.UserName, model.Password, model.Email, null, null, true, null, out createStatus);
+                Membership.CreateUser(username, password, email, null, null, true, null, out createStatus);
 
                 if (createStatus == MembershipCreateStatus.Success)
                 {
-                    FormsAuthentication.SetAuthCookie(model.UserName, false /* createPersistentCookie */);
+                    FormsAuthentication.SetAuthCookie(username, false /* createPersistentCookie */);
                     PersonDB stu = new PersonDB();
-                    stu.student_id = model.UserName;
+                    stu.student_id = username;
                     stu.first_name = first_name;
                     stu.last_name = last_name;
-                    stu.email = model.Email;
+                    stu.email = email;
                     person.Persons.Add(stu);
                     person.SaveChanges();
                     return RedirectToAction("Init", "Home");
@@ -102,7 +104,7 @@ namespace uchange.Controllers
             }
 
             // If we got this far, something failed, redisplay form
-            return View(model);
+            return View();
         }
 
         //

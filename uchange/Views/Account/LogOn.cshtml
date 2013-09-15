@@ -38,28 +38,16 @@
         <div class="col-md-6 field">
         @using (Html.BeginForm())
         {
-            <div class="editor-label">
-                @Html.LabelFor(m => m.UserName)
-            </div>
-            <div class="editor-field">
-                @Html.TextBoxFor(m => m.UserName)
-                @Html.ValidationMessageFor(m => m.UserName)
+            <div class="col-md-8 col-md-offset-2">
+                <p><input type="text" class="form-control" name="username" placeholder="username"/></p>
             </div>
 
-            <div class="editor-label">
-                @Html.LabelFor(m => m.Password)
+            <div class="col-md-8 col-md-offset-2">
+                <p><input type="password" class="form-control" name="password" placeholder="password"/></p>
             </div>
-            <div class="editor-field">
-                @Html.PasswordFor(m => m.Password)
-                @Html.ValidationMessageFor(m => m.Password)
-            </div>
-
-            <div class="editor-label">
-                @Html.CheckBoxFor(m => m.RememberMe)
-                @Html.LabelFor(m => m.RememberMe)
-            </div>
-            <button type="submit" class="btn submit btn-primary" style="margin-right: 30px">Login</button>
-            <button class="btn" type="button" style="margin-left: 30px">
+            
+            <button type="submit" class="btn submit btn-primary" style="margin-right: 30px;margin-top: 15px">Login</button>
+            <button class="btn" type="button" style="margin-left: 30px;margin-top: 15px">
                 <a href="/account/register" style="text-decoration:none">Sign Up</a>
             </button>
         }
