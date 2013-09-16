@@ -53,24 +53,28 @@
             <ul class="nav nav-tabs nav-stacked">
                 @if (ViewBag.flag == 1)
                 {
-                    <li>This is your own item!</li>
+                    <li style="text-align:center">This is your own item!</li>
                 }
 
                 @if (ViewBag.flag == 2)
                 {
-                    <li>The owner of this item has sent request to you. You can get it by a click.</li>
-                    <a href="/requests/accept/@Model.id" style="font-weight:bold;color:#F00">Accept</a>
+                    <li style="text-align:center">The owner of this item has sent request to you. You can get it by a click.</li>
+                    <div style="margin-left:130px;margin-top:7px">
+                    <a href="/requests/accept/@Model.id"><button class="btn btn-primary btn-sm">Accept</button></a>
+                    </div>
                 }
 
                 @if (ViewBag.flag == 3)
                 {
-                    <li>You've sent request.</li>
+                    <li style="text-align:center">You've sent request.</li>
                 }
 
                 @if (ViewBag.flag == 0)
                 {
-                    <li>Do you want it? Send request now.</li>
-                    <a href="/requests/send/@Model.id">Send Request</a>
+                    <li style="text-align:center">Do you want it? Send request now.</li>
+                    <div style="margin-left:110px;margin-top:7px">
+                    <a href="/requests/send/@Model.id"><button class="btn btn-primary btn-sm">Send Request</button></a>
+                    </div>
                 }
 
                 <li><a href="/item/history/@Model.id">Change History</a></li>
